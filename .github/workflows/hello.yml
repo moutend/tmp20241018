@@ -1,0 +1,8 @@
+name: Hello
+on: push
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, I am ${{github.actor}}!"
+      - uses: actions/checkout@v4
