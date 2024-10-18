@@ -3,6 +3,8 @@ on: push
 jobs:
   printing:
     runs-on: ubuntu-latest
+    env:
+      EXAMPLE: foobar
     steps:
       - run: echo "Hello, I am ${{github.actor}}!"
       - uses: actions/checkout@v4
