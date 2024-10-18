@@ -6,8 +6,10 @@ jobs:
     env:
       EXAMPLE: job-level
     steps:
-      - run: echo "Hello, I am ${EXAMPLE}!"
-      - run: echo "Hello, I am ${EXAMPLE}!"
-        env:
-          EXAMPLE: step-level
+      - name: First step
+        run: echo "Hello, I am ${EXAMPLE}!"
+      - name: Second step
+        run: echo "Hello, I am ${EXAMPLE}!"
+          env:
+            EXAMPLE: step-level
       - uses: actions/checkout@v4
