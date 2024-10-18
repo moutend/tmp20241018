@@ -4,7 +4,7 @@ jobs:
   printing:
     runs-on: ubuntu-latest
     env:
-      EXAMPLE: foobar
+      EXAMPLE: job-level
     steps:
-      - run: echo "Hello, I am ${{github.actor}}!"
+      - run: echo "Hello, I am ${EXAMPLE}!"
       - uses: actions/checkout@v4
