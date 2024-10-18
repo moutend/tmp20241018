@@ -1,12 +1,8 @@
 name: Print environment variables
 on: push
-env:
-  EXAMPLE: Defined by workflow level
 jobs:
-  print:
+  printing:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "The value of EXAMPLE is ${EXAMPLE}"
-      - env:
-          EXAMPLE: Defined by step level
-        - run: echo "The value of EXAMPLE is ${EXAMPLE}"
+      - run: echo "Hello, I am ${{github.actor}}!"
+      - uses: actions/checkout@v4
